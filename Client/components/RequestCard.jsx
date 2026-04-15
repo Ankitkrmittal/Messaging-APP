@@ -15,11 +15,19 @@ const RequestCard = ({ request, refresh }) => {
   };
 
   return (
-    <div style={{ border: "1px solid blue", padding: "10px", margin: "5px" }}>
-      <p>{request.sender.email}</p>
-
-      <button onClick={handleAccept}>Accept</button>
-      <button onClick={handleReject}>Reject</button>
+    <div className="social-card request-card">
+      <div className="social-card-copy">
+        <p className="social-card-title">{request.sender.name || "New request"}</p>
+        <p className="social-card-subtitle">{request.sender.email}</p>
+      </div>
+      <div className="request-actions">
+        <button type="button" className="social-card-btn accept-btn" onClick={handleAccept}>
+          Accept
+        </button>
+        <button type="button" className="social-card-btn reject-btn" onClick={handleReject}>
+          Reject
+        </button>
+      </div>
     </div>
   );
 };

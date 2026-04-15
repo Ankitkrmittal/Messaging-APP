@@ -82,8 +82,7 @@ export async function acceptFriendRequest(req,res) {
 
 export async function rejectFriendRequest(req,res) {
     try {
-        //const userId = req.user.id;
-        const {userId} = req.body;
+        const userId = req.user.id;
         const {requestId} = req.body;
         const request = await prisma.friendRequest.findUnique({
             where:{id:requestId}

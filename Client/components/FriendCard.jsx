@@ -1,10 +1,15 @@
-
-
-const FriendCard = ({ friend }) => {
+const FriendCard = ({ friend, onClick, actionLabel = "Chat" }) => {
   return (
-    <div style={{ border: "1px solid gray", padding: "10px", margin: "5px" }}>
-      <p>{friend.email}</p>
-      <p>{friend.name || "No Name"}</p>
+    <div className="social-card friend-card">
+      <div className="social-card-copy">
+        <p className="social-card-title">{friend.name || "No Name"}</p>
+        <p className="social-card-subtitle">{friend.email}</p>
+      </div>
+      {onClick ? (
+        <button type="button" className="social-card-btn" onClick={() => onClick(friend)}>
+          {actionLabel}
+        </button>
+      ) : null}
     </div>
   );
 };

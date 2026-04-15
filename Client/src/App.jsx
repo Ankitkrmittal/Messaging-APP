@@ -28,10 +28,10 @@ const App = () => {
       path="/verify-otp"
       element={!isLoggedIn ? <VerifyOtp/> :<Navigate to="/dashboard"/>}
       />
-      <Route
+      {/* <Route
       path="/friends"
       element={isLoggedIn ? <FriendsPage/> :<Navigate to="/signin"/>}
-      />
+      /> */}
       <Route
       path ="*"
       element={<Navigate to="/signup"/>}/>
